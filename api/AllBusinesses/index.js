@@ -1,16 +1,11 @@
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+const knex = require("../sqlconnect");
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
+module.exports = async function (context, req) {
+  context.log("View All Businesses function processed a request.");
+  const result = await knex("businesses").select("*").limit(20);
+  console.log(result);
+  context.res = {
+    // status: 200, /* Defaults to 200 */
+    body: result,
+  };
 };
