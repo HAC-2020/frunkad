@@ -1,6 +1,19 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
+import useSWR from 'swr';
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+function Businesses() {
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_URL + '/api/AllBusinesses', fetcher);
+  console.log(error);
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+    console.log(data)
+    return <div>hello {data[0].name}</div>
+}
 
 export default function Home() {
   return (
@@ -13,6 +26,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Read <Link href="/posts/first-post"><a>this page</a></Link>
+          <Businesses />
         </h1>
 
         <p className={styles.description}>
