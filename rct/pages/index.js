@@ -52,12 +52,9 @@ function ExperimentsCard(props) {
         </p>
       </div>
       <div className="px-6 py-4">
-        <a href={"mailto:"+props.cta} className="inline-block bg-blue-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2">
-          Experiment
+        <a href={"mailto:"+props.cta} className="inline-block bg-yellow-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2">
+          Read More
         </a>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          {props.category}
-        </span>
       </div>
     </div>
   );

@@ -3,9 +3,11 @@ import Link from "next/link";
 function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white p-6">
-      <div className="flex items-center flex-shrink-0 text-black mr-6">
-        <img className="fill-current h-10  mr-2" src="/logo2.png" />
-      </div>
+      <Link href="/">
+        <div className="flex items-center flex-shrink-0 text-black mr-6">
+          <img className="fill-current h-10  mr-2" src="/logo2.png" />
+        </div>
+      </Link>
       <div className="block lg:hidden">
         <button className="flex items-center px-3 py-2 border rounded text-gray-200 border-teal-400 hover:text-white hover:border-white">
           <svg
@@ -19,15 +21,12 @@ function Navbar() {
         </button>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-        </div>
+        <div className="text-sm lg:flex-grow"></div>
         <div>
           <Link href="/business/new">
-            <a
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0"
-          >
-            New Business
-          </a>
+            <a className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0">
+              New Business
+            </a>
           </Link>
         </div>
       </div>
