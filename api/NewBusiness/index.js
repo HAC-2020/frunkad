@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
     }
     else {
         const id = uuidv4();
-        const result = await knex("businesses").insert({id: id, name: req.body.name, category: req.body.category, email: req.body.email, employees: +req.body.employees });
+        const result = await knex("businesses").insert({id: id, name: req.body.name, category: req.body.category, email: req.body.email, employees: +req.body.employees, description: req.body.description });
         console.log(result);
         context.res = {
             body: {id: id},

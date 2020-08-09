@@ -24,14 +24,11 @@ function BusinessCard(props) {
         </p>
       </div>
       <div className="px-6 py-4">
+        <a href={"mailto:"+props.cta} className="inline-block bg-blue-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2">
+          Experiment
+        </a>
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          #photography
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          #travel
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-          #winter
+          {props.category}
         </span>
       </div>
     </div>
@@ -49,7 +46,7 @@ function Businesses() {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
   const ds = data.map((d) => (
-    <BusinessCard description={d.description} name={d.name} key={d.id} />
+    <BusinessCard description={d.description} name={d.name} key={d.id} category={d.category} cta={d.email} />
   ));
   return (
     <div ref={sliderRef} className="keen-slider pt-1">
