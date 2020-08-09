@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white p-6">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
-        <img className="fill-current h-10  mr-2" src="/logo.png" />
+        <img className="fill-current h-10  mr-2" src="/logo2.png" />
       </div>
       <div className="block lg:hidden">
         <button className="flex items-center px-3 py-2 border rounded text-gray-200 border-teal-400 hover:text-white hover:border-white">
