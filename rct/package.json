@@ -8,12 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "final-form": "^4.20.1",
     "keen-slider": "^5.2.2",
     "next": "9.5.1",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
+    "react-azure-maps": "^0.1.2",
     "react-dom": "16.13.1",
+    "react-final-form": "^6.5.1",
     "sass": "^1.26.10",
     "swr": "^0.3.0",
     "tailwindcss": "^1.6.2"

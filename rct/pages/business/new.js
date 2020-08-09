@@ -1,9 +1,18 @@
 import { Component } from "react";
 import Head from "next/head";
-
-// App Specific
+import SimpleForm from '../../components/new-business-form';
 import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+function formSubmitted(formData, state) {
+  console.log(formData);
+  fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/api/NewBusiness",
+    {method: 'POST', body: JSON.stringify(formData), headers: {'Content-Type': 'application/json'}}
+  ).then((res) => res.json()).then(() => console.log('saved')).catch(() => alert('An error occurred'));
+}
 
 class NewBusiness extends Component {
   constructor(props) {
@@ -33,6 +42,7 @@ class NewBusiness extends Component {
         <Head>
           <title>{title}</title>
         </Head>
+        <SimpleForm onSubmit={formSubmitted} />
       </Layout>
     );
   }
