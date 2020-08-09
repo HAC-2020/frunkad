@@ -1,4 +1,7 @@
 import { Form, Field } from 'react-final-form'
+import dynamic from 'next/dynamic'
+
+const DefaultMap = dynamic(() => import('./mapview'),  { ssr: false })
 
 const SimpleForm = (props) => {
   return (
@@ -41,6 +44,11 @@ const SimpleForm = (props) => {
           <Field className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  name="description" component="textarea"/>
         </div>
       </div>
+
+      <div className="mb-6">
+        <DefaultMap />
+      </div>
+
       <div>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
       </div>
